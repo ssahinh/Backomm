@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "5737453afe149a07499b97ea079aa918817bcd69"
+    "signature": "8a23db29325b8a27a8245f119d7c9733a5391c4f"
   },
   "compilationOptions": {
     "defines": [
@@ -25,6 +25,7 @@
       "Backomm/1.0.0": {
         "dependencies": {
           "FluentAssertions": "5.9.0",
+          "FluentValidation.AspNetCore": "8.5.0",
           "Microsoft.AspNetCore": "2.2.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Authentication": "2.2.0",
@@ -63,6 +64,51 @@
         },
         "compile": {
           "lib/netcoreapp2.0/FluentAssertions.dll": {}
+        }
+      },
+      "FluentValidation/8.5.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.5.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        }
+      },
+      "FluentValidation.AspNetCore/8.5.0": {
+        "dependencies": {
+          "FluentValidation": "8.5.0",
+          "FluentValidation.DependencyInjectionExtensions": "8.5.0",
+          "Microsoft.AspNetCore.Mvc": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.AspNetCore.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.5.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.AspNetCore.dll": {}
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/8.5.0": {
+        "dependencies": {
+          "FluentValidation": "8.5.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.5.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll": {}
         }
       },
       "Microsoft.AspNetCore.Mvc.Testing/2.2.0": {
@@ -3487,6 +3533,27 @@
       "sha512": "sha512-OXLNffjNuUvIT/eFSX9XfqK/rTiJYKDmmibH46YLczzo891FibPZdxaV5N7PHcrRt5LvOdSrCXsEsEeuqTQszg==",
       "path": "fluentassertions/5.9.0",
       "hashPath": "fluentassertions.5.9.0.nupkg.sha512"
+    },
+    "FluentValidation/8.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NVMvFn37UcTQqeiAt4TIFajbGcVzYvvG4MR9q9Nm96E68yp0gVIF+oWEM2GQmn1siRGrf+mgJwQmbBaHcCblDQ==",
+      "path": "fluentvalidation/8.5.0",
+      "hashPath": "fluentvalidation.8.5.0.nupkg.sha512"
+    },
+    "FluentValidation.AspNetCore/8.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p6G4vG7ZSn6RioN71OxCBekAUtHzxE8M9KrJuOS6Q+g28lvfOYGH13h0v32Thc94eOpJJMHA84VH/9W6vQ7NmA==",
+      "path": "fluentvalidation.aspnetcore/8.5.0",
+      "hashPath": "fluentvalidation.aspnetcore.8.5.0.nupkg.sha512"
+    },
+    "FluentValidation.DependencyInjectionExtensions/8.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/NmnmQG/z3xCmp6wL4ftMipQnlH7Dxn4Keitbn+2kF9QKU0NVfz7Mk9covneeGvoyd7you6ojAkNwsQJJInKMQ==",
+      "path": "fluentvalidation.dependencyinjectionextensions/8.5.0",
+      "hashPath": "fluentvalidation.dependencyinjectionextensions.8.5.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Testing/2.2.0": {
       "type": "package",

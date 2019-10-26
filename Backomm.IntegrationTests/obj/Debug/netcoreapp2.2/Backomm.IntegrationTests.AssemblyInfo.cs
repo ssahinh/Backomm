@@ -7,6 +7,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Backomm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\sahin\\RiderProjects\\Backomm\\Backomm", "Backomm.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Backomm.IntegrationTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
