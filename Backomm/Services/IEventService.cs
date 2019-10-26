@@ -11,5 +11,7 @@ namespace Backomm.Services
         Task<Event> GetEventByIdAsync(int EventId);
 
         Task<bool> JoinEventAsync(int EventId, ApplicationUser user);
+
+        Task<bool> CreateEventAsync(Event Event);
     }
 }

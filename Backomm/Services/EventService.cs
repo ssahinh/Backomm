@@ -42,5 +42,14 @@ namespace Backomm.Services
 
             return true;
         }
+
+        public async Task<bool> CreateEventAsync(Event Event)
+        {
+            await _dataContext.Events.AddAsync(Event);
+
+            var created = await _dataContext.SaveChangesAsync();
+
+            return created > 0;
+        }
     }
 }

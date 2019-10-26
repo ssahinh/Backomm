@@ -26,6 +26,5 @@ namespace Backomm.IntegrationTests
             (await response.Content.ReadAsAsync<List<Group>>()).Should().BeEmpty();
         }
 
-        
     }
 }
