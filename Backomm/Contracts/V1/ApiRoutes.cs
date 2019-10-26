@@ -34,8 +34,10 @@ namespace Backomm.Contracts.V1
         public static class Event
         {
             public const string Get = Base + "/events";
-        
-            public const string JoinEvent = Base + "/events";
+
+            public const string CreateEvent = Base + "/events";
+            
+            public const string JoinEvent = Base + "/eventJoin";
             
             public const string GetById = Base + "/events/{EventId}";
 

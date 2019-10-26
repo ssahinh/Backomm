@@ -38,6 +38,10 @@
           "target": "Package",
           "version": "[5.9.0, )"
         },
+        "FluentValidation.AspNetCore": {
+          "target": "Package",
+          "version": "[8.5.0, )"
+        },
         "Microsoft.AspNetCore.App": {
           "target": "Package",
           "version": "[2.2.0, )"
