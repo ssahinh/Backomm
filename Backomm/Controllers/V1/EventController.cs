@@ -15,7 +15,7 @@ namespace Backomm.Controllers.V1
     {
         private readonly IEventService _eventService;
         private readonly UserManager<ApplicationUser> _userManager;
-        
+
         public EventController(IEventService eventService, UserManager<ApplicationUser> userManager)
         {
             _eventService = eventService;
@@ -32,6 +32,35 @@ namespace Backomm.Controllers.V1
                 Code = "success",
                 Message = "get.events.success",
                 Data = model
+            };
+
+            return Ok(response);
+        }
+
+        [HttpPost(ApiRoutes.Event.CreateEvent)]
+        public async Task<IActionResult> CreatEvent(CreateEventRequest  request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new
+                {
+                    Code = "error",
+                    Message = "error.create.event",
+                    Error = "empty name"
+                });
+            }
+            
+            var Event = new Event
+            {
+                About = request.About
+            };
+
+            await _eventService.CreateEventAsync(Event);
+
+            var response = new EventResponse
+            {
+                Code = "success",
+                Message = "create.event.success"
             };
 
             return Ok(response);
