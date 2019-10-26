@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
 using Backomm.Options;
 using Backomm.Services;
+using FluentValidation.AspNetCore;
 
 namespace Backomm.Installers
 {
@@ -42,13 +43,15 @@ namespace Backomm.Installers
             });
             
 
-            services.AddMvc()
+            services
+                .AddMvc()
+                .AddFluentValidation(mvcConfiguration => mvcConfiguration.RegisterValidatorsFromAssemblyContaining<Startup>())
                 .AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddSwaggerGen(x =>
             {
-                x.SwaggerDoc("v1", new Info{Title = "Tweetbook API", Version = "v1"});
+                x.SwaggerDoc("v1", new Info{Title = "Backomm API", Version = "v1"});
 
                 var security = new Dictionary<string, IEnumerable<string>>
                 {
