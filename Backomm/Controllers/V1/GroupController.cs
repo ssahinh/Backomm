@@ -57,6 +57,16 @@ namespace Backomm.Controllers.V1
         {
             var user = await GetUser();
 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new
+                {
+                    Code = "error",
+                    Message = "group.join.error",
+                    Error = "Can't joined group"
+                });
+            }
+            
             if (user == null)
             {
                 return BadRequest(new
@@ -68,17 +78,7 @@ namespace Backomm.Controllers.V1
             }
             
             var model = await _groupService.JoinGroup(user, request.GroupId);
-
-            if (model == false)
-            {
-                return BadRequest(new
-                {
-                    Code = "error",
-                    Message = "group.join.error",
-                    Error = "Can't joined group"
-                });
-            }
-
+            
             var response = new GroupResponse
             {
                 Code = "success",
