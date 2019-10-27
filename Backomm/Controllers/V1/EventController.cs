@@ -1,3 +1,4 @@
+using System;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -52,7 +53,8 @@ namespace Backomm.Controllers.V1
             
             var Event = new Event
             {
-                About = request.About
+                About = request.About,
+                //AddedDate = DateTime.Now
             };
 
             await _eventService.CreateEventAsync(Event);

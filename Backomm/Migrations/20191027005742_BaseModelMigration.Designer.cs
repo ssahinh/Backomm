@@ -4,14 +4,16 @@ using Backomm.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Backomm.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20191027005742_BaseModelMigration")]
+    partial class BaseModelMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,13 +86,13 @@ namespace Backomm.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("AddedDate");
+
                     b.Property<string>("Description");
 
                     b.Property<DateTime>("ModifiedDate");
 
                     b.Property<string>("Title");
-
-                    b.Property<DateTime>("addedDate");
 
                     b.HasKey("Id");
 
@@ -100,34 +102,34 @@ namespace Backomm.Migrations
                         new
                         {
                             Id = 1,
+                            AddedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Art Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Arts",
-                            addedDate = new DateTime(2019, 10, 27, 4, 7, 58, 531, DateTimeKind.Local).AddTicks(693)
+                            Title = "Arts"
                         },
                         new
                         {
                             Id = 2,
+                            AddedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Hobby Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Hobbies",
-                            addedDate = new DateTime(2019, 10, 27, 4, 7, 58, 531, DateTimeKind.Local).AddTicks(810)
+                            Title = "Hobbies"
                         },
                         new
                         {
                             Id = 3,
+                            AddedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Tech Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Tech",
-                            addedDate = new DateTime(2019, 10, 27, 4, 7, 58, 531, DateTimeKind.Local).AddTicks(884)
+                            Title = "Tech"
                         },
                         new
                         {
                             Id = 4,
+                            AddedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Outdoor Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Outdoor",
-                            addedDate = new DateTime(2019, 10, 27, 4, 7, 58, 531, DateTimeKind.Local).AddTicks(954)
+                            Title = "Outdoor"
                         });
                 });
 
@@ -139,9 +141,9 @@ namespace Backomm.Migrations
 
                     b.Property<string>("About");
 
-                    b.Property<DateTime>("ModifiedDate");
+                    b.Property<DateTime>("AddedDate");
 
-                    b.Property<DateTime>("addedDate");
+                    b.Property<DateTime>("ModifiedDate");
 
                     b.HasKey("Id");
 
@@ -154,6 +156,8 @@ namespace Backomm.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("AddedDate");
+
                     b.Property<int?>("CategoryId");
 
                     b.Property<string>("Description");
@@ -161,8 +165,6 @@ namespace Backomm.Migrations
                     b.Property<DateTime>("ModifiedDate");
 
                     b.Property<string>("Title");
-
-                    b.Property<DateTime>("addedDate");
 
                     b.HasKey("Id");
 
