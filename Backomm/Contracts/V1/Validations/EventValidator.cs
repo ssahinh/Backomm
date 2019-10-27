@@ -13,4 +13,13 @@ namespace Backomm.Contracts.V1.Validations
                 .MaximumLength(255);
         }
     }
+
+    public class JoinEventValidator : AbstractValidator<JoinEventRequest>
+    {
+        public JoinEventValidator()
+        {
+            RuleFor(x => x.EventId)
+                .NotNull();
+        }
+    }
 }

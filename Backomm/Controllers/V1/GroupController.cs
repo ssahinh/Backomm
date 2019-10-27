@@ -56,11 +56,27 @@ namespace Backomm.Controllers.V1
         public async Task<IActionResult> JoinGroup([FromBody] UserJoinGroupRequest request)
         {
             var user = await GetUser();
+
+            if (user == null)
+            {
+                return BadRequest(new
+                {
+                    Code = "error",
+                    Message = "auth.user.not-found",
+                    Error = "User Not Found"
+                });
+            }
+            
             var model = await _groupService.JoinGroup(user, request.GroupId);
 
             if (model == false)
             {
-                return NotFound();
+                return BadRequest(new
+                {
+                    Code = "error",
+                    Message = "group.join.error",
+                    Error = "Can't joined group"
+                });
             }
 
             var response = new GroupResponse

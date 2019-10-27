@@ -95,9 +95,23 @@ namespace Backomm.Controllers.V1
 
             if (user == null)
             {
-                return NotFound();
+                return BadRequest(new
+                {
+                    Code = "error",
+                    Message = "auth.user.not-found",
+                    Error = "User Not Found"
+                });
             }
-
+            
+            if (!ModelState.IsValid)
+            {    
+                return BadRequest(new
+                {
+                    Code = "error",
+                    Message = "error.create.event",
+                    Error = "Empty EventId"
+                });
+            }
             var model = await _eventService.JoinEventAsync(request.EventId, user);
 
             var response = new EventGetByIdResponse
