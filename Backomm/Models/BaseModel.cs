@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace Backomm.Models
 {
@@ -11,7 +12,8 @@ namespace Backomm.Models
         public DateTime? AddedDate = null;
         
         public DateTime ModifiedDate { get; set; }
-        
+        [    JsonIgnore]
+
         public DateTime addedDate
         {
             get
