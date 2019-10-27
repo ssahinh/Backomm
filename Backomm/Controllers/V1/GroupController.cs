@@ -59,13 +59,13 @@ namespace Backomm.Controllers.V1
 
             if (!ModelState.IsValid)
             {
-                return BadRequest(new
+                return BadRequest(    new
                 {
                     Code = "error",
                     Message = "group.join.error",
                     Error = "Can't joined group"
                 });
-            }
+            }    
             
             if (user == null)
             {

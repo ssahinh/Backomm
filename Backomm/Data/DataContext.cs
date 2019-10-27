@@ -1,5 +1,6 @@
 using System.Diagnostics.Contracts;
 using Backomm.Contracts.V1.Responses;
+using Backomm.Data.Seeders;
 using Backomm.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -53,37 +54,8 @@ namespace Backomm.Data
                     .IsRequired();
             });
 
-            modelBuilder.Entity<Category>().HasData(
-                new Category
-                {
-                    Id =  1,
-                    Title = "Arts",
-                    Description =  "Art Category",
-                });
-
-            modelBuilder.Entity<Category>().HasData(
-                new Category
-                {
-                    Id = 2,
-                    Title = "Hobbies",
-                    Description =  "Hobby Category",
-                });
-
-            modelBuilder.Entity<Category>().HasData(
-                new Category
-                {
-                    Id = 3,
-                    Title = "Tech",
-                    Description =  "Tech Category",
-                });
-            
-            modelBuilder.Entity<Category>().HasData(
-                new Category
-                {
-                    Id = 4,
-                    Title = "Outdoor",
-                    Description =  "Outdoor Category",
-                });
+            modelBuilder.CategorySeed();
+            modelBuilder.GroupSeed();
 
         }
     }
