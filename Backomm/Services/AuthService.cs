@@ -34,7 +34,7 @@ namespace Backomm.Services
             {
                 return new AuthenticationResult
                 {
-                    Errors = new[] {"User with this email address already exists"}
+                    //Errors = new[] {"User with this email address already exists"}
                 };
             }
             
@@ -50,7 +50,7 @@ namespace Backomm.Services
             {
                 return new AuthenticationResult
                 {
-                    Errors = createdUser.Errors.Select(x => x.Description)
+                    //Errors = createdUser.Errors.Select(x => x.Description)
                 };
             }
 
@@ -65,7 +65,8 @@ namespace Backomm.Services
             {
                 return new AuthenticationResult
                 {
-                    Errors = new[] {"User does not exist"}
+                    Error = "User does not exist"
+                    //Errors = new[] {"User does not exist"}
                 };
             }
 
@@ -75,7 +76,7 @@ namespace Backomm.Services
             {
                 return new AuthenticationResult
                 {
-                    Errors = new[] {"User/password combination is wrong"}
+                    //Errors = new[] {"User/password combination is wrong"}
                 };
             }
 

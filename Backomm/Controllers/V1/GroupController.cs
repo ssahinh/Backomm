@@ -59,7 +59,7 @@ namespace Backomm.Controllers.V1
 
             if (!ModelState.IsValid)
             {
-                return BadRequest(    new
+                return BadRequest(new
                 {
                     Code = "error",
                     Message = "group.join.error",

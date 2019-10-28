@@ -24,7 +24,7 @@ namespace Backomm.Controllers.V1
             {
                 return BadRequest(new AuthFailedResponse
                 {
-                    Errors = ModelState.Values.SelectMany(x => x.Errors.Select(xx => xx.ErrorMessage))
+                    //Errors = ModelState.Values.SelectMany(x => x.Errors.Select(xx => xx.ErrorMessage))
                 });
             }
 
@@ -34,7 +34,7 @@ namespace Backomm.Controllers.V1
             {
                 return BadRequest(new AuthFailedResponse
                 {
-                    Errors = authResponse.Errors
+                    //Errors = authResponse.Errors
                 });
             }
 
@@ -55,7 +55,9 @@ namespace Backomm.Controllers.V1
             {
                 return BadRequest(new AuthFailedResponse
                 {
-                    Errors = authResponse.Errors
+                    Code = "error",
+                    Message = "auth.login.error",
+                    Error = authResponse.Error
                 });
             }
 
