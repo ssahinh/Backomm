@@ -1,3 +1,5 @@
+using System;
+using System.Data;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -49,6 +51,19 @@ namespace Backomm.IntegrationTests
 
             var registrationResponse = await response.Result.Content.ReadAsAsync<AuthSuccessResponse>();
             return registrationResponse.Token;
+        }
+
+        protected async Task<EventGetByIdResponse> CreateEventAsync(CreateEventRequest request)
+        { 
+            var response = await TestClient.PostAsJsonAsync(ApiRoutes.Event.CreateEvent, request);
+
+            var responseModel = new EventGetByIdResponse
+            {
+                Code = "success",
+                Message = "success.create.event",
+            };
+
+            return responseModel;
         }
     }
 }
