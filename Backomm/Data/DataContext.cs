@@ -20,6 +20,8 @@ namespace Backomm.Data
         public DbSet<Event> Events { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<FacebookUser> FacebookUsers { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<County> Counties { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
