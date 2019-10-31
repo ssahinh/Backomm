@@ -24,7 +24,9 @@ namespace Backomm.Services
 
         public async Task<City> GetCityByIdAsync(int CityId)
         {
-            return await _dataContext.Cities.SingleOrDefaultAsync(x => x.Id == CityId);
+            return await _dataContext.Cities
+                .Include(city => city.Counties)
+                .SingleOrDefaultAsync(x => x.Id == CityId);
         }
     }
 }

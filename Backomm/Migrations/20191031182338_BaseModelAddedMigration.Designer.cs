@@ -4,14 +4,16 @@ using Backomm.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Backomm.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20191031182338_BaseModelAddedMigration")]
+    partial class BaseModelAddedMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,7 +105,7 @@ namespace Backomm.Migrations
                             Description = "Art Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Arts",
-                            addedDate = new DateTime(2019, 10, 31, 21, 35, 38, 165, DateTimeKind.Local).AddTicks(2708)
+                            addedDate = new DateTime(2019, 10, 31, 21, 23, 38, 173, DateTimeKind.Local).AddTicks(9022)
                         },
                         new
                         {
@@ -111,7 +113,7 @@ namespace Backomm.Migrations
                             Description = "Hobby Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Hobbies",
-                            addedDate = new DateTime(2019, 10, 31, 21, 35, 38, 165, DateTimeKind.Local).AddTicks(2773)
+                            addedDate = new DateTime(2019, 10, 31, 21, 23, 38, 173, DateTimeKind.Local).AddTicks(9142)
                         },
                         new
                         {
@@ -119,7 +121,7 @@ namespace Backomm.Migrations
                             Description = "Tech Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Tech",
-                            addedDate = new DateTime(2019, 10, 31, 21, 35, 38, 165, DateTimeKind.Local).AddTicks(2871)
+                            addedDate = new DateTime(2019, 10, 31, 21, 23, 38, 173, DateTimeKind.Local).AddTicks(9192)
                         },
                         new
                         {
@@ -127,7 +129,7 @@ namespace Backomm.Migrations
                             Description = "Outdoor Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Outdoor",
-                            addedDate = new DateTime(2019, 10, 31, 21, 35, 38, 165, DateTimeKind.Local).AddTicks(2917)
+                            addedDate = new DateTime(2019, 10, 31, 21, 23, 38, 173, DateTimeKind.Local).AddTicks(9235)
                         },
                         new
                         {
@@ -135,7 +137,7 @@ namespace Backomm.Migrations
                             Description = "Test Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Test",
-                            addedDate = new DateTime(2019, 10, 31, 21, 35, 38, 165, DateTimeKind.Local).AddTicks(2961)
+                            addedDate = new DateTime(2019, 10, 31, 21, 23, 38, 173, DateTimeKind.Local).AddTicks(9280)
                         });
                 });
 
@@ -248,7 +250,7 @@ namespace Backomm.Migrations
                             Description = "Group 1 Description",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Group 1 Test",
-                            addedDate = new DateTime(2019, 10, 31, 21, 35, 38, 165, DateTimeKind.Local).AddTicks(6154)
+                            addedDate = new DateTime(2019, 10, 31, 21, 23, 38, 174, DateTimeKind.Local).AddTicks(3330)
                         });
                 });
 
@@ -399,7 +401,7 @@ namespace Backomm.Migrations
             modelBuilder.Entity("Backomm.Models.County", b =>
                 {
                     b.HasOne("Backomm.Models.City", "City")
-                        .WithMany("Counties")
+                        .WithMany()
                         .HasForeignKey("CityId");
                 });
 
