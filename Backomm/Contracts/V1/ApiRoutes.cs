@@ -52,5 +52,11 @@ namespace Backomm.Contracts.V1
             public const string UserGroups = Base + "/user/groups";
         }
 
+        public static class City
+        {
+            public const string Get = Base + "/cities";
+
+            public const string GetById = Base + "/cities/{CityId}";
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace Backomm.Controllers.V1
 
             if (model == null)
             {    
-                return NotFound();
+                return BadRequest();
             }
 
             var response = new CategoryResponse
@@ -46,7 +46,7 @@ namespace Backomm.Controllers.V1
 
             if (model == null)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             var response = new CategoryGetByIdResponse
