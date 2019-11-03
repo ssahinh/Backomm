@@ -4,14 +4,16 @@ using Backomm.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Backomm.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20191103190530_ServicesMigration")]
+    partial class ServicesMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -126,7 +128,7 @@ namespace Backomm.Migrations
                             Description = "Art Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Arts",
-                            addedDate = new DateTime(2019, 11, 3, 22, 5, 30, 314, DateTimeKind.Local).AddTicks(8036)
+                            addedDate = new DateTime(2019, 11, 3, 22, 5, 30, 311, DateTimeKind.Local).AddTicks(6526)
                         },
                         new
                         {
@@ -134,7 +136,7 @@ namespace Backomm.Migrations
                             Description = "Hobby Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Hobbies",
-                            addedDate = new DateTime(2019, 11, 3, 22, 5, 30, 314, DateTimeKind.Local).AddTicks(8157)
+                            addedDate = new DateTime(2019, 11, 3, 22, 5, 30, 311, DateTimeKind.Local).AddTicks(6733)
                         },
                         new
                         {
@@ -142,7 +144,7 @@ namespace Backomm.Migrations
                             Description = "Tech Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Tech",
-                            addedDate = new DateTime(2019, 11, 3, 22, 5, 30, 314, DateTimeKind.Local).AddTicks(8240)
+                            addedDate = new DateTime(2019, 11, 3, 22, 5, 30, 311, DateTimeKind.Local).AddTicks(6817)
                         },
                         new
                         {
@@ -150,7 +152,7 @@ namespace Backomm.Migrations
                             Description = "Outdoor Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Outdoor",
-                            addedDate = new DateTime(2019, 11, 3, 22, 5, 30, 314, DateTimeKind.Local).AddTicks(8373)
+                            addedDate = new DateTime(2019, 11, 3, 22, 5, 30, 311, DateTimeKind.Local).AddTicks(6893)
                         },
                         new
                         {
@@ -158,7 +160,7 @@ namespace Backomm.Migrations
                             Description = "Test Category",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Test",
-                            addedDate = new DateTime(2019, 11, 3, 22, 5, 30, 314, DateTimeKind.Local).AddTicks(8451)
+                            addedDate = new DateTime(2019, 11, 3, 22, 5, 30, 311, DateTimeKind.Local).AddTicks(6976)
                         });
                 });
 
@@ -271,7 +273,7 @@ namespace Backomm.Migrations
                             Description = "Group 1 Description",
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Group 1 Test",
-                            addedDate = new DateTime(2019, 11, 3, 22, 5, 30, 315, DateTimeKind.Local).AddTicks(4729)
+                            addedDate = new DateTime(2019, 11, 3, 22, 5, 30, 312, DateTimeKind.Local).AddTicks(4392)
                         });
                 });
 

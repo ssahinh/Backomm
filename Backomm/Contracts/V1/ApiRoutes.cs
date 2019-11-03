@@ -58,5 +58,12 @@ namespace Backomm.Contracts.V1
 
             public const string GetById = Base + "/cities/{CityId}";
         }
+
+        public static class WebServices
+        {
+            public const string Get = Base + "/services";
+
+            public const string CreateService = Base + "/services";
+        }
     }
 }

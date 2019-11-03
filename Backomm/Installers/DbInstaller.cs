@@ -26,6 +26,7 @@ namespace Backomm.Installers
             services.AddScoped<IEventService, EventService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICityService, CityService>();
+            services.AddScoped<IWebServicesService, WebServicesService>();
         }
     }
 }
