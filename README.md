@@ -19,6 +19,6 @@
         `http://127.0.0.1:80`
         
 <p align="center">
- <img width="500" height="300" src="https://i.ibb.co/hH1BPTG/dockerSS.png">
+ <img width="600" height="200" src="https://i.ibb.co/hH1BPTG/dockerSS.png">
 </p>
 
