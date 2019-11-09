@@ -5,4 +5,9 @@ namespace Backomm.Contracts.V1.Requests
         public string Title { get; set; }
         public string Description { get; set; }
     }
+
+    public class GetServiceByIdRequest
+    {
+        public int ServiceId { get; set; }
+    }
 }

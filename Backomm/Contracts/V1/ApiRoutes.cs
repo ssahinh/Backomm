@@ -63,6 +63,8 @@ namespace Backomm.Contracts.V1
         {
             public const string Get = Base + "/services";
 
+            public const string GetById = Base + "/services/{ServiceId}";
+
             public const string CreateService = Base + "/services";
         }
     }

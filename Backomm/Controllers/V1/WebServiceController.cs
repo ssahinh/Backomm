@@ -28,14 +28,33 @@ namespace Backomm.Controllers.V1
         {
             var model = await _service.GetAllServicesAsync();
 
-            var response = new WebServiceGetResponse
+            var response = new 
+            {
+                Code = "success",
+                Message = "get.services.success",
+            };
+            
+            return Ok(response);
+        }
+
+        [HttpGet(ApiRoutes.WebServices.GetById)]
+        public async Task<IActionResult> GetServiceById(GetServiceByIdRequest request)
+        {
+            var model = await _service.GetServiceByIdAsync(request.ServiceId);
+
+            if (model == null)
+            {
+                return BadRequest();
+            }
+
+            var response = new WebServiceResponse
             {
                 Code = "success",
                 Message = "get.services.success",
                 Data = model
             };
-            
-            return Ok(response);
+
+            return Ok(model);
         }
 
         [HttpPost(ApiRoutes.WebServices.CreateService)]
