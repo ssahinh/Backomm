@@ -5,10 +5,13 @@ using Backomm.Contracts.V1.Requests;
 using Backomm.Contracts.V1.Responses;
 using Backomm.Models;
 using Backomm.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backomm.Controllers.V1
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;

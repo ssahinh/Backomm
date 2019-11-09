@@ -3,10 +3,13 @@ using Backomm.Contracts.V1;
 using Backomm.Contracts.V1.Requests;
 using Backomm.Contracts.V1.Responses;
 using Backomm.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backomm.Controllers.V1
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class CityController : Controller
     {
         private readonly ICityService _cityService;

@@ -6,12 +6,15 @@ using Backomm.Contracts.V1.Responses;
 using Backomm.Data;
 using Backomm.Models;
 using Backomm.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backomm.Controllers.V1
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class UserController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

@@ -58,6 +58,18 @@ namespace Backomm.Data
                     .HasForeignKey(ur => ur.UserId)
                     .IsRequired();
             });
+            
+            modelBuilder.Entity<ApplicationUser>()    
+                .Ignore(c => c.NormalizedEmail)       
+                .Ignore(c => c.NormalizedUserName)    
+                .Ignore(c => c.EmailConfirmed)        
+                .Ignore(c => c.SecurityStamp)         
+                .Ignore(c => c.ConcurrencyStamp)      
+                .Ignore(c => c.PhoneNumberConfirmed)  
+                .Ignore(c => c.LockoutEnabled)
+                .Ignore(c => c.TwoFactorEnabled)
+                .Ignore(c => c.LockoutEnd)
+                .Ignore(c => c.AccessFailedCount);
 
             modelBuilder.CategorySeed();
             modelBuilder.GroupSeed();
