@@ -9,6 +9,6 @@ namespace Backomm.Services
     { 
         Task<ApplicationUser> GetUserEventsAsync(ApplicationUser user);
         Task<ApplicationUser> GetUserGroupAsync(ApplicationUser user);
-
+        Task<bool> UpdateUserAsync(ApplicationUser user);
     }
 }

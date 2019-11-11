@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace Backomm.Models
 {
@@ -7,5 +7,7 @@ namespace Backomm.Models
         public string Title { get; set; }
 
         public City City { get; set; }
+        
+        public ICollection<ApplicationUser> ApplicationUsers { get; set; }
     }
 }

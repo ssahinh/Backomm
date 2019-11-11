@@ -6,4 +6,10 @@ namespace Backomm.Contracts.V1.Responses
     {
         
     }
+
+    public class UserNullResponse
+    {
+        public string Code { get; set; }
+        public string Message { get; set; }
+    }
 }

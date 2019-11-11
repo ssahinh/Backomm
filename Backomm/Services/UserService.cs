@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Backomm.Contracts.V1.Responses;
 using Backomm.Data;
 using Backomm.Models;
 using Microsoft.AspNetCore.Identity;
@@ -37,5 +38,24 @@ namespace Backomm.Services
                 .ThenInclude(x => x.Category)
                 .FirstAsync();
         }
+
+        public Task<bool> UpdateUserAsync(ApplicationUser user)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /*
+        public async Task<bool> UpdateUserAsync(string email, string userName)
+        {
+            var existingUser = await _userManager.FindByEmailAsync(email);
+
+            if (existingUser == null)
+            {
+                return false;
+            }
+
+            _userManager.ChangePasswordAsync(existingUser.Email);
+        }
+        */
     }
 }

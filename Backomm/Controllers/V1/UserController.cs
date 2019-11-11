@@ -2,6 +2,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Backomm.Contracts.V1;
+using Backomm.Contracts.V1.Requests;
 using Backomm.Contracts.V1.Responses;
 using Backomm.Data;
 using Backomm.Models;
@@ -85,7 +86,19 @@ namespace Backomm.Controllers.V1
 
             return Ok(response);
         }
-        
+/*
+        [HttpPut(ApiRoutes.User.Update)]
+        public async Task<IActionResult> UpdateProfile([FromBody] UserRequest request)
+        {
+            var user = await this.GetUser();
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+        }
+*/
         private async Task<ApplicationUser> GetUser()
         {
             ClaimsPrincipal currentUser = this.User;

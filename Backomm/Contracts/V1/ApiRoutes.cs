@@ -47,6 +47,8 @@ namespace Backomm.Contracts.V1
         {
             public const string Me = Base + "/user/me";
 
+            public const string Update = Base + "/user/me";
+
             public const string UserEvents = Base + "/user/events";
 
             public const string UserGroups = Base + "/user/groups";

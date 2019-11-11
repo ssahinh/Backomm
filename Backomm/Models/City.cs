@@ -8,5 +8,7 @@ namespace Backomm.Models
     {
         public string Title { get; set; }
         public ICollection<County> Counties { get; set; } 
+        
+        public ICollection<ApplicationUser> ApplicationUsers { get; set; }
     }
 }

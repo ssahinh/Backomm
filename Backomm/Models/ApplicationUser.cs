@@ -16,5 +16,9 @@ namespace Backomm.Models
         public Group Group { get; set; }
 
         public Event Event { get; set; }
+        
+        public City City { get; set; }
+        
+        public County County { get; set; }
     }
 }
